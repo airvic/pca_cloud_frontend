@@ -1,0 +1,25 @@
+
+<section class="act" *ngIf ="username.length > 1" >
+    <mat-card>
+        <h2>Activities</h2>
+        <div class="list">
+            <mat-list *ngFor="let u of username">
+                <mat-list-item> <img src="{{u.image}}" width="30px"> {{u.username}} joined Pca cloud</mat-list-item>
+                <hr>
+                
+               </mat-list>
+        </div>
+       
+    </mat-card>
+    
+</section>
+
+
+
+<!-- <footer>
+    <mat-card a>
+        PCA CLOUD 
+        All rights reserved @2022
+    </mat-card>
+
+</footer> -->

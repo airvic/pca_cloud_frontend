@@ -1,0 +1,64 @@
+
+<mat-sidenav-container class="matcontainer">
+  <mat-sidenav [(opened)]="opened">
+   <!-- navigation content -->
+       
+<mat-toolbar class="toolbar">
+  <div class="spacer"></div>
+  <div class="link">
+    <mat-icon class="menu" (click)="sidenav($event)">close</mat-icon>
+    
+  
+  </div>
+
+</mat-toolbar>
+<div class="section">
+  <img class="profile_pic" src="{{image}}" alt="">
+  <section class="section">
+    <h3>{{user}}</h3> <br> <label>{{gmail}}</label>
+  </section>
+</div>
+
+  <div class="router">
+   <ul>
+    <li><button mat-button (click)="logout($event)"><mat-icon class="icon">logout</mat-icon> logout</button>
+      <br>
+     </li>
+     <li><button mat-button (click)="Delete_account()" ><mat-icon class="icon">Delete_account</mat-icon> Delete account </button>
+      <br>
+      </li>
+      <li><button mat-button (click)="helpandsupport()"><mat-icon class="icon">help</mat-icon>Help & support</button></li>
+   </ul>
+ 
+  </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <!-- main content -->
+    
+<mat-toolbar class="toolbar"> <h3 class="title" (click)="home()">{{title}}</h3>
+  <div class="spacer"></div>
+  <div class="link" *ngIf="isloggedin">
+    <mat-icon class="menu" (click)="sidenav($event)">menu</mat-icon>
+    
+  
+  </div>
+
+<div class="link" *ngIf="!isloggedin">
+ <button mat-button routerLink ="dashboard">Dashboard</button>
+ <button mat-button routerLink ="signup">Signup</button>
+
+ <button mat-button routerLink ="login">Login</button>
+
+</div>
+
+</mat-toolbar>
+
+<div *ngIf ="loaderService.isloading | async" class="loader-container"> 
+   <mat-progress-bar  mode ="indeterminate"></mat-progress-bar>
+</div>
+
+<router-outlet></router-outlet>
+  </mat-sidenav-content>
+  
+</mat-sidenav-container>

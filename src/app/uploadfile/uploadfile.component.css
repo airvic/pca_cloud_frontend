@@ -1,0 +1,44 @@
+.form{
+    text-align: center;
+    margin-top: 30px;
+}
+#file{
+    width: 200px;
+}
+
+button{
+    width: 200px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    border: 2px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.errormsg{
+    align-items: center;
+    text-align: center;
+}
+.errormsg h3{
+    color: rgb(246, 29, 29);
+    text-shadow: 2rem;
+    font-size: larger;
+    font-weight: 800;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.successmsg{
+    align-items: center;
+    text-align: center;
+
+}
+.successmsg h3{
+    color: rgb(16, 189, 16);
+    text-align: center;
+    padding: 10px;
+    font-size: larger;
+    font-weight: 800;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,40 @@
+  <section>
+    <h1 class="signup">SIGN UP</h1>
+
+    <div *ngIf="nofile" class="warndv">
+      <p class="warn">* Please  select a profile photo!!</p>
+    </div>
+  <form method="post" enctype="multipart/form-data">
+ 
+        <input class="input"  [(ngModel)] = "name" type="name" name="name" placeholder="enter name" ng-required>
+        <br>
+
+        
+        <input class="input"  [(ngModel)] = "username" type="name" name="name" placeholder="create Username" required>
+<br>
+
+
+<input class="input"  [(ngModel)] = "gmail" type="gmail" name="gmail" placeholder="enter Gmail" required>
+<br>
+
+<input   class="file" type="file" required name="file" (change)="onfile($event)" >
+<br>
+      
+        <input class="input"  [(ngModel)] = "password" type="password" name="password" placeholder="enter password" required>
+<br>
+<div *ngIf ="wrongpassword">
+    <h3 class="pass">please check passwords </h3>
+</div>
+    
+        <input class="input"  [(ngModel)] = "conpassword" type="password" name="password" placeholder="Confrm password" required>
+        <br>
+        <input type="checkbox" required>agreed to pca_cloud terms and conditions <a (click)="loginpage()"><a>login here</a> </a>
+        <br>
+         
+        <button class="btn" (click)="signup()" >Sign up</button>
+        
+
+    </form>
+    
+  </section>
+  <app-footer></app-footer>

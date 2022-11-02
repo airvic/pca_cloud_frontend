@@ -1,0 +1,27 @@
+<h1 class="tooltip">welcome  {{user}}</h1>
+  <section class="center">
+    <mat-grid-list cols="2" rowHeight="2:1">
+        <mat-grid-tile><mat-card routerLink = 'uploads'>	<mat-icon class="icon ">add_to_photos</mat-icon></mat-card>
+        </mat-grid-tile>
+        <mat-grid-tile><mat-card routerLink = 'view'><mat-icon class="icon">photo_library</mat-icon></mat-card></mat-grid-tile>
+      </mat-grid-list>
+    
+  </section>
+  <section class="sec">
+     <mat-card routerLink = 'uploads'>	<mat-icon class="icon">add_to_photos</mat-icon></mat-card>
+      <mat-card routerLink = 'view'><mat-icon class="icon">photo_library</mat-icon></mat-card>
+
+    
+  </section>
+
+
+<!-- 
+  <div class="storage">
+    <div class="tm"><mat-card><h3>storage capacity  </h3><span>{{capacity}}1112</span></mat-card></div>
+    <div class="tmm"><mat-card><h3>Total items  </h3><span>{{Res}}2223</span></mat-card></div>
+    <div class="tmmm"><mat-card><h3>available capacity  </h3><span>{{newstore}}3334</span></mat-card></div>
+  </div> -->
+
+  <app-activities></app-activities>
+
+  <app-footer></app-footer>

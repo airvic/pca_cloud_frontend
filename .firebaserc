@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "pcacloud-dcda8": {
+      "hosting": {
+        "PCA-cloud": [
+          "pcacloud-dcda8"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "pcacloud-dcda8"
+  }
+}

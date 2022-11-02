@@ -1,0 +1,13 @@
+
+
+<div class="center">
+    <div class="grid">
+        <div  *ngFor="let n of resarray">
+            <img (click)="openBottomSheet(n.url)" src="{{n.url}}" alt="">
+        </div>
+    </div>
+</div>
+<!-- <input class="input"  [(ngModel)] = "imageurl" type="name" name="name" placeholder="enter username" ng-required>
+<button mat-raised (click)="openBottomSheet()">open bottom sheet</button> -->
+<app-footer></app-footer>
+

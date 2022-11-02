@@ -1,0 +1,39 @@
+section{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.signup{
+    font-size: large;
+    font-weight: 500;
+
+}
+.input{
+    margin: 10px;
+    width: 30%;
+    height: auto;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(105, 55, 255);
+}
+.pass{
+    color: red;
+    font-style: italic;
+    margin: 0px;
+    padding: 0px;
+}
+.btn{
+    background-color:rgb(105, 55, 255);
+    color: white;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+    width: 30%;
+    border-radius: 20px;
+
+
+}
+.file{
+    width: 30%;
+    color:rgb(105, 55, 255);
+}

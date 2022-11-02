@@ -1,0 +1,20 @@
+<div class="form"> 
+<h2>Add images</h2>
+        <input type="file" name="file" id="file" multiple (change)="selectFile($event)">
+       <div>
+        <button [disabled]="!selectedFiles"
+        (click)="Uploadfile()">Upload</button>
+
+        <div class="errormsg" *ngIf="errormsg">
+                <h3>Unable to upload files please check internet connection!!</h3>
+        </div>
+
+        <div class="errormsg" *ngIf="msg">
+                <h3>file needs to be less than 5 </h3>
+        </div>
+        <div class="successmsg" *ngIf="successmsg">
+                <h3>successfully uploaded files!!</h3>
+        </div>
+       </div>
+      </div>
+      <app-footer></app-footer>

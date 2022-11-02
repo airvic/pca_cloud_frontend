@@ -1,0 +1,250 @@
+.toolbar {
+    align-items: center;
+    background-color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    padding: 0px;
+    margin: 0px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  img{
+    width: 4%;
+    border-radius: 100%;
+ 
+  }
+  .link{
+    padding: 10px;
+    margin-right: 10px;
+  }
+  
+  .spacer {
+    flex: 1 ;
+  }
+  .link a{
+      text-decoration: none;
+  }
+  .link a button{
+      color: white;
+  }
+  .menu{
+    color: rgb(27, 26, 26);
+    font-size:x-large;
+    cursor: pointer;
+  }
+  .menu :hover{
+    margin: 10px;
+
+  }
+.socials{
+  text-align: center;
+
+}
+.socials img{
+  padding: 20px;
+}
+  @media screen and (min-width: 770px) {
+
+
+    .logo{
+      width: 2%;
+    }
+
+  }
+  @media screen and (max-width: 770px) {
+   .logo{
+     width: 10%;
+   }
+  
+  }
+  .sec{
+    font-size: 14px;
+    padding-bottom: 13px;
+    line-height: 1.4;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+  }
+  .ul li{
+    font-size: 12px;
+    padding-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    cursor:pointer;
+    display: block;
+    color: rgb(20, 20, 20);
+    
+  }
+  .x{
+    padding: auto;
+    cursor: pointer;
+  }
+  .matcontainer mat-sidenav{
+    width: 30%;
+
+  }
+  .logo{
+    width: 5%;
+  }
+
+  .title{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+    font-weight: 800;
+    padding: 0px;
+    margin-left: 10px;
+  }
+  
+
+
+  .col22{
+    width:80%;
+    -ms-flex-item-align: center;
+  }
+  .col33{
+    width:20%;
+    -ms-flex-item-align: left;
+  }
+
+
+  @media screen and (max-width: 1200px) {
+    .col11{
+      width: 20%;
+      -ms-flex-item-align: right;
+    }
+    .col22{
+      width:70%;
+      -ms-flex-item-align: center;
+    }
+    .col33{
+      width:30%;
+      -ms-flex-item-align: left;
+    }
+   
+
+   }
+
+   @media screen and (max-width: 1000px) {
+    
+    .col22{
+      width:75%;
+      -ms-flex-item-align: center;
+    }
+    .col33{
+      width:25%;
+      -ms-flex-item-align: left;
+    }
+   
+   }
+   @media screen and (max-width: 768px) {
+ 
+    .col22{
+      width:70%;
+      -ms-flex-item-align: center;
+    }
+    .col33{
+      width:30%;
+      -ms-flex-item-align: left;
+    }
+   
+   }
+   @media screen and (max-width: 576px) {
+  
+    .col22{
+      width:100%;
+      -ms-flex-item-align: center;
+    }
+   
+   
+   }
+   .loader-container{
+   
+    width: 100%;
+    z-index: 99;
+
+   }
+   .menu{
+    color: rgb(27, 26, 26);
+    font-size:x-large;
+    cursor: pointer;
+  }
+  .menu :hover{
+    margin: 10px;
+
+  }
+  .matcontainer mat-sidenav{
+    width: 70%;
+  
+   
+
+  }
+  ul {
+    font-size: 12px;
+    padding-bottom: 10px;
+    line-height: 1.2;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.6px;
+    cursor:pointer;
+    display: block;
+    color: rgb(20, 20, 20);
+  }
+  ul li{
+    text-decoration: none;
+    display: block;
+
+  }
+  .profile_pic{
+    width: 50%;
+ margin-top: 20px;
+    cursor: pointer;
+  }
+  .section{
+    text-align: center;
+  }
+  .section h3{
+    padding: 0px;
+    margin: 0px;
+    font-weight: 800;
+    font-size: x-large;
+    font-style: oblique;
+  }
+  .section label{
+    margin: 0px;
+    padding: 0px;
+    font-weight: 700;
+    font-style: oblique;
+  }
+  .mat-icon{
+    display: inline-block;
+    padding:0px;
+
+  }
+  .router{
+    padding: 0px;
+  }
+  .router mat-icon{
+    margin-right: 10px;
+    margin-bottom: 3px;
+  }
+  .mat-toolbar{
+    width: 100%;
+  }
+
+  @media screen and (max-width:350px) {
+    .router{
+      padding: 0px;
+      width: 100%;
+      justify-content: center;
+    }
+    .router mat-icon{
+      margin-right: 5px;
+      margin-bottom: 1px;
+    }
+    .matcontainer mat-sidenav{
+      width: 100%;
+  
+    }
+  }

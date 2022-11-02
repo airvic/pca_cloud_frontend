@@ -1,0 +1,49 @@
+section{
+    text-align: center;
+    margin-top: 50px;
+}
+
+.signup{
+    font-size: large;
+    font-weight: 500;
+
+}
+.input{
+    margin: 10px;
+    width: 50%;
+    height: auto;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid rgb(105, 55, 255);
+}
+.pass{
+    color: red;
+    font-style: italic;
+    margin: 0px;
+    padding: 0px;
+}
+.btn{
+    background-color:rgb(105, 55, 255);
+    color: white;
+    margin: 20px;
+    padding: 10px;
+    cursor: pointer;
+    width: 50%;
+    border-radius: 20px;
+
+
+}
+.warndv{
+    text-align: center;
+}
+.warn{
+    color:red
+}
+ @media screen and (max-width:361px) {
+    .input{
+        width:100%;
+    }
+    .btn{
+        width:90%;
+    }
+ }
