@@ -5,8 +5,7 @@
   "main": "pca_cloud.js",
   "scripts": {
     "start": "node pca_cloud.js",
-    "dev": " nodemon pca_cloud.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": " nodemon pca_cloud.js"
   },
   "keywords": [
     "cloud",
