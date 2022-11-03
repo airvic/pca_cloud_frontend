@@ -96,17 +96,10 @@ await this.filesarray.forEach(async (file: { type: any; name: any; })  => {
       const preSignedURL = await getSignedUrl(this.bucket, command, { expiresIn: 3600});
       
       await this.http.put(preSignedURL, file).subscribe({
-        next: (res) => {
+        next: async (res) => {
           console.log("success");
-        },
-        error: (err) => {
-        console.log("unable to save profile photo please check internet connection")
-        this.errormsg = true;
-        },
-        complete: async () => {
-          console.log("DONE")
           this.filefrombucket = 'https://cloudfil.s3.amazonaws.com/'+file.name;
-          await this.post.postimagelink(this.filefrombucket).subscribe(res=>{
+          const done = await this.post.postimagelink(this.filefrombucket).subscribe(res=>{
             console.log(res)
             if(res == true){
            this.successmsg = true
@@ -114,6 +107,13 @@ await this.filesarray.forEach(async (file: { type: any; name: any; })  => {
              window.alert("an error occured check files")
             }
           })
+        },
+        error: (err) => {
+        console.log("unable to save profile photo please check internet connection")
+        this.errormsg = true;
+        },
+        complete: async () => {
+          console.log("DONE")
         }
       })
     } catch(err) {

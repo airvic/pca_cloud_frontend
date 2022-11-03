@@ -1,11 +1,11 @@
 
 
-<div class="image"><a href="{{image}}" download="pcaphoto" title="photo">
+<div class="image">
      <img src="{{image}}" alt="">
-    </a>
+  
      <div class="btn">
        
-        <span><button (click)="delete(image)">Delete photo</button></span> <span><button (click)="download(image)">Download photo</button></span>
+        <span><button (click)="delete(image)">Delete photo</button></span> <span><a href="{{image}}" download="pcaphoto" title="photo"><button (click)="download(image)">Download photo</button>  </a></span>
      </div>
    
 </div>

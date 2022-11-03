@@ -10,6 +10,7 @@ import { HttpClient} from '@angular/common/http';
   templateUrl: './buttomsheet.component.html',
   styleUrls: ['./buttomsheet.component.css']
 })
+
 export class ButtomsheetComponent implements OnInit {
   status: any;
   constructor( @Inject(MAT_BOTTOM_SHEET_DATA) public data:any,private _bottomSheetRef: MatBottomSheetRef<MatBottomSheetRef>,public post:PostService,private httpClient:HttpClient) {}
@@ -26,7 +27,7 @@ export class ButtomsheetComponent implements OnInit {
   }
   async delete(image:any){
    await this.post.deletephoto(image).subscribe(res =>{
-  if(res == true){
+  if(res = true){
     window.alert('successfully deleted photo!')
   }else{
     window.alert('an error occured!!')

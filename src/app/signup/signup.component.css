@@ -41,9 +41,17 @@ section{
 }
  @media screen and (max-width:361px) {
     .input{
-        width:100%;
+        width:85%;
     }
     .btn{
-        width:90%;
+        width:85%;
+    }
+ }
+ @media screen and (max-width:255px) {
+    .input{
+        width:70%;
+    }
+    .btn{
+        width:70%;
     }
  }

@@ -1,16 +1,17 @@
 section{
     text-align: center;
     margin-top: 50px;
+
 }
 
 .signup{
-    font-size: large;
+    font-size: larger;
     font-weight: 500;
 
 }
 .input{
     margin: 10px;
-    width: 30%;
+    width: 85%;
     height: auto;
     padding: 10px;
     border-radius: 3px;
@@ -28,7 +29,7 @@ section{
     margin: 20px;
     padding: 10px;
     cursor: pointer;
-    width: 30%;
+    width: 70%;
     border-radius: 20px;
 
 
@@ -37,3 +38,12 @@ section{
     width: 30%;
     color:rgb(105, 55, 255);
 }
+
+/* @media screen and (max-width:587px) {
+    .input{
+        width:100%;
+    }
+    .btn{
+        width:70%;
+    }
+ } */

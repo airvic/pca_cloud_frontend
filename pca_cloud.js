@@ -70,7 +70,22 @@ app.use(function(req, res, next) {
     res.sendFile(path.join(__dirname,'public/index.html'))
       
   })
-
+  app.get('/dasboard/view',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/index.html/dashboard/view'))
+      
+  })
+  app.get('/dasboard',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/index.html/dashboard'))
+      
+  })
+  app.get('/login',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/index.html/login'))
+      
+  })
+  app.get('/dasboard/uploads',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public/index.html/dashboard/uploads'))
+      
+  })
 app.get('/home',(req,res)=>{
     res.send(true)
 
