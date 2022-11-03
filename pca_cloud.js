@@ -1,7 +1,8 @@
 const express = require ('express');
+const path = require('path')
 const app = express()
 const Multer = require('multer');
-const path = require('path')
+
  const bodyparser = require ('body-parser');
 const { MongoClient } = require('mongodb');
 const JWT = require('jsonwebtoken');
@@ -9,7 +10,7 @@ const bcryptjs = require('bcryptjs')
 const mongoose = require('mongoose');
 const mongodb = require('mongodb').client;
 
-
+app.use(express.static(path.join(__dirname,'public')));
 
 // const fileupload = require('express-fileupload')
 
@@ -41,7 +42,7 @@ var diskstorage = Multer.diskStorage({
 
 
   app.use(bodyparser.json())
-  app.use(express.static(path.join(__dirname,'public')));
+  
 app.use('/images',express.static(path.join('images')))
   app.use(bodyparser.urlencoded({extended : true}))
 

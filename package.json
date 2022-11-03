@@ -4,8 +4,9 @@
   "description": "pca cloud a site for my school to host all memorable photos and video",
   "main": "pca_cloud.js",
   "scripts": {
-    "start": "node pca_cloud.js",
-    "dev": " nodemon pca_cloud.js"
+    "dev": " nodemon pca_cloud.js",
+    "start": "node pca_cloud.js"
+    
   },
   "keywords": [
     "cloud",
