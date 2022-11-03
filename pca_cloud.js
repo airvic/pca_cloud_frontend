@@ -183,9 +183,8 @@ app.post('/login',async (req,res)=>{
 })
 
 
-const PORT = process.env.port || 8080;
-
-app.listen(PORT ,()=>{
-    console.log("server on port: "+ PORT);    
+const port = process.env.PORT || 3000;
+app.listen(port ,()=>{
+    console.log("server on port: "+ port);    
 })
 
