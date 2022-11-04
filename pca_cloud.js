@@ -70,6 +70,7 @@ app.use(function(req, res, next) {
     res.sendFile(path.join(__dirname,'public/index.html/dasboard'))
       
   })
+
   app.get('*',(req,res)=>{
     res.sendFile(path.join(__dirname+'/public/index.html'));
   })
@@ -87,6 +88,7 @@ app.get('/image',async(req,res)=>{
 app.get('/activities',async (req,res)=>{
   const user  =  await User.find()
   res.send(user)
+
 })
 
 app.post('/signup',async (req,res)=>{
