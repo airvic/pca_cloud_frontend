@@ -70,21 +70,8 @@ app.use(function(req, res, next) {
     res.sendFile(path.join(__dirname,'public/index.html'))
       
   })
-  app.get('/dasboard/view',(req,res)=>{
-    res.sendFile(path.join(__dirname,'public/index.html/dashboard/view'))
-      
-  })
-  app.get('/dasboard',(req,res)=>{
-    res.sendFile(path.join(__dirname,'public/index.html/dashboard'))
-      
-  })
-  app.get('/login',(req,res)=>{
-    res.sendFile(path.join(__dirname,'public/index.html/login'))
-      
-  })
-  app.get('/dasboard/uploads',(req,res)=>{
-    res.sendFile(path.join(__dirname,'public/index.html/dashboard/uploads'))
-      
+  app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname+'public/index.html'))
   })
 app.get('/home',(req,res)=>{
     res.send(true)
@@ -137,7 +124,12 @@ res.json({
 app.post('/saveurl',async(req,res)=>{
   console.log(req.body.url)
   url = req.body.url
-     const Url = await imageurl.create({
+  const existed =  await imageurl.findOne({url:req.body.url})
+  if(existed){
+    res.send(true)
+    console.log('file already exist')
+  }else{
+    const Url = await imageurl.create({
       url:req.body.url
      }).then(()=>{
    res.send(true)
@@ -145,6 +137,8 @@ app.post('/saveurl',async(req,res)=>{
 
       res.send(false)
      })
+  }
+
 
 
 
