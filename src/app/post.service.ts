@@ -65,7 +65,7 @@ this.auth.Storetoken(res.username,res.token,res.gmail,res.image)
 
 }
 getactivities(){
-  return this.http.post('http://localhost:3000/activities', {responseType: 'json'})
+  return this.http.post('http://localhost:3000/activities',{ responseType: 'json'})
 }
 deleteaccount(username:any){
   return this.http.post<Obj>('deleteaccount',{username}).subscribe(res=>{

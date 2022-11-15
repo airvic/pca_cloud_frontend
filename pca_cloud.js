@@ -127,7 +127,7 @@ res.json({
 app.post('/saveurl',async(req,res)=>{
   console.log(req.body.url)
   url = req.body.url
-  const existed =  await imageurl.findOne({image:req.body.url})
+  const existed =  await imageurl.findOne({url:req.body.url})
   if(existed){
     res.send(true)
     console.log('file already exist')
