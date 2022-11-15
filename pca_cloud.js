@@ -7,6 +7,7 @@ const Multer = require('multer');
 const { MongoClient } = require('mongodb');
 const JWT = require('jsonwebtoken');
 const bcryptjs = require('bcryptjs')
+
 const mongoose = require('mongoose');
 const mongodb = require('mongodb').client;
 
@@ -79,15 +80,15 @@ app.get('/home',(req,res)=>{
 
 })
 
-app.get('/image',async(req,res)=>{
+app.post('/image',async(req,res)=>{
   const image = await imageurl.find()
-  console.log("route hitted")
-  res.send(image)
+ res.json(image)
 
 })
-app.get('/activities',async (req,res)=>{
+app.post('/activities',async (req,res)=>{
+  console.log("route htiited")
   const user  =  await User.find()
-  res.send(user)
+  res.json(user)
 
 })
 
@@ -126,7 +127,7 @@ res.json({
 app.post('/saveurl',async(req,res)=>{
   console.log(req.body.url)
   url = req.body.url
-  const existed =  await imageurl.findOne({url:req.body.url})
+  const existed =  await imageurl.findOne({image:req.body.url})
   if(existed){
     res.send(true)
     console.log('file already exist')

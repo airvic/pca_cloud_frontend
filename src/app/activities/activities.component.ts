@@ -18,8 +18,9 @@ export class ActivitiesComponent implements OnInit {
 
   getact(){
     this.post.getactivities().subscribe(res =>{
+      console.log(res)
       this.username = res
-      this.usernam = this.username.reverse()
+    
     })
   }
 }
