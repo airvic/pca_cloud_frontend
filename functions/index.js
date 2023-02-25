@@ -1,3 +1,4 @@
+const functions = require("firebase-functions");
 const express = require ('express');
 const path = require('path')
 const app = express()
@@ -44,7 +45,6 @@ var diskstorage = Multer.diskStorage({
 
   app.use(bodyparser.json())
   
-app.use('/images',express.static(path.join('images')))
   app.use(bodyparser.urlencoded({extended : true}))
 
 app.use(function(req, res, next) {
@@ -56,6 +56,7 @@ app.use(function(req, res, next) {
     }
     next();
   });
+
   
   // const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true});
   mongoose.connect('mongodb+srv://airvic:airvic_pca_cloud@pca.zfyqb.mongodb.net/users?retryWrites=true&w=majority',{ 
@@ -71,14 +72,17 @@ app.use(function(req, res, next) {
     res.sendFile(path.join(__dirname,'public/index.html/dasboard'))
       
   })
-
-  app.get('*',(req,res)=>{
-    res.sendFile(path.join(__dirname+'/public/index.html'));
+  app.get("/test",(req,res)=>{
+    res.json({valid:true})
   })
-app.get('/home',(req,res)=>{
-    res.send(true)
 
-})
+  // app.get('*',(req,res)=>{
+  //   res.sendFile(path.join(__dirname+'/public/index.html'));
+  // })
+
+  app.get('*', function (req, res) {
+    res.sendFile(path.join(path.join(__dirname, 'public/index.html')));
+  });
 
 app.post('/image',async(req,res)=>{
   const image = await imageurl.find()
@@ -160,8 +164,11 @@ app.post('/deletephoto',async(req,res)=>{
 
 })
 
-app.post('/login',async (req,res)=>{
+
+app.post('/Login',async (req,res)=>{
   const user = await User.findOne({username:req.body.username,password:req.body.password})
+
+ console.log(req.body)
 
   // hash_password =  await bcryptjs.hash(req.body.password,10)
   // console.log(hash_password)
@@ -175,28 +182,36 @@ app.post('/login',async (req,res)=>{
       expiresIn:'24h'
     })
     
-    return res.json({
+   const msg = ({
       success:true,
       username:user.username,
       gmail:user.email,
       image:user.image,
      token:token
     })
+      res.end(JSON.stringify(msg))
   }else{
 
 
-     return res.json({
+     msg = ({
       success:false
 
      })
+     res.end(JSON.stringify(msg))
     // console.log("no user found with username" + req.body.username)
   }
   
 })
 
 
-const port = process.env.PORT || 3000;
-app.listen(port ,()=>{
-    console.log("server on port: "+ port);    
-})
+// const port = process.env.PORT || 3000;
+// app.listen(port ,()=>{
+//     console.log("server on port: "+ port);    
+// })
 
+
+
+// // Create and deploy your first functions
+// // https://firebase.google.com/docs/functions/get-started
+//
+exports.app = functions.https.onRequest(app);

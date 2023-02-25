@@ -26,7 +26,7 @@ export class PostService {
     
   }
    checkconnection(){
-    this.http.get('home').subscribe(res =>{
+    this.http.post('https://pca-shsx.onrender.com/home',{ responseType: 'application/json'}).subscribe(res =>{
       if(true){
             console.log("true")
       }
@@ -37,14 +37,14 @@ export class PostService {
    }
   signup(name:any,username:any,password:any,gmail:any,filefrombucket:any){
   // console.log(name)
-  return this.http.post('signup',{
+  return this.http.post('https://pca-shsx.onrender.com/signup',{
     name,username,password,gmail,filefrombucket
   })
 
   }
   postimagelink(url:any){
     // console.log(name)
-    return this.http.post('saveurl',{
+    return this.http.post('https://pca-shsx.onrender.com/saveurl',{
     url
     })
   
@@ -53,9 +53,10 @@ export class PostService {
 
 
 login(username:any,password:any){
-  this.http.post<Obj>('login',{
+  this.http.post<Obj>('https://pca-shsx.onrender.com/Login',{
     username,password
-  }).subscribe(res =>{
+  },{responseType: 'json'}).subscribe(async (res) =>{
+   console.log(res)
    if(res.success){
 this.auth.Storetoken(res.username,res.token,res.gmail,res.image)
    }else{
@@ -65,10 +66,10 @@ this.auth.Storetoken(res.username,res.token,res.gmail,res.image)
 
 }
 getactivities(){
-  return this.http.post('activities',{ responseType: 'json'})
+  return this.http.post('https://pca-shsx.onrender.com/activities',{ responseType: 'json'})
 }
 deleteaccount(username:any){
-  return this.http.post<Obj>('deleteaccount',{username}).subscribe(res=>{
+  return this.http.post<Obj>('https://pca-shsx.onrender.com/deleteaccount',{username}).subscribe(res=>{
     if(res.success){
       localStorage.clear();
       this.router.navigate(['signup'])
@@ -79,12 +80,12 @@ deleteaccount(username:any){
 }
 
 getimages(){
-return this.http.post('image', {responseType: 'json'})
+return this.http.post('https://pca-shsx.onrender.com/image', {responseType: 'json'})
 }
 
 deletephoto(image:any){
   console.log(image)
-  return this.http.post('deletephoto',{
+  return this.http.post('https://pca-shsx.onrender.com/deletephoto',{
     image
   });
 }

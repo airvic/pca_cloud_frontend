@@ -20,6 +20,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
+
 import { ActivitiesComponent } from './activities/activities.component';
 import {MatListModule} from '@angular/material/list';
 import {MatTableModule} from '@angular/material/table';
@@ -27,15 +28,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { UploadfileComponent } from './uploadfile/uploadfile.component';
 import { ViewComponent } from './view/view.component';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
-import { AngularFireStorage, AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { environment } from 'src/environments/environment';
-import { FileUploadServicService } from './file-upload-servic.service';
+import { FileUploadServicService } from './file-upload-servic.service'
 import { HelpAndSupportComponent } from './help-and-support/help-and-support.component';
 import { FooterComponent } from './footer/footer.component';
 import { ButtomsheetComponent } from './buttomsheet/buttomsheet.component';
 import { MatBottomSheetModule  } from '@angular/material/bottom-sheet';
-import { FileSaverModule } from 'ngx-filesaver';
+// import { FileSaverModule } from 'ngx-filesaver';
 
 
 
@@ -59,7 +60,7 @@ import { FileSaverModule } from 'ngx-filesaver';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatToolbarModule,
-    MatIconModule,
+    MatIconModule, 
     MatButtonModule,
   MatFormFieldModule,
   FormsModule,
@@ -73,12 +74,9 @@ import { FileSaverModule } from 'ngx-filesaver';
   MatSidenavModule,
   ReactiveFormsModule,
   AngularFireModule.initializeApp(environment.firebaseConfig),
-  AngularFireStorageModule,
   AngularFireDatabaseModule,
-  MatBottomSheetModule,
-  FileSaverModule
-  
- 
+  MatBottomSheetModule
+  // FileSaverModule
   ],
   providers: [FileUploadServicService,PostService,{provide:HTTP_INTERCEPTORS,useClass:InterceptorService,multi:true},AuthGuard,AngularFireStorage],
   bootstrap: [AppComponent]
